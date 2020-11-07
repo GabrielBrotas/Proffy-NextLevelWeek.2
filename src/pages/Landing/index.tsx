@@ -1,5 +1,8 @@
 import React from 'react'
 
+// O link impede que a pagina seja carregada toda novamente e só renderiza o necessario, diferento da tag html <a href />
+import {Link} from 'react-router-dom'
+
 // imagens
 import logoImg from '../../assets/images/logo.svg'
 import landingImg from '../../assets/images/landing.svg'
@@ -26,15 +29,15 @@ function Landing() {
                 />
 
                 <div className="buttons-container">
-                    <a href="" className="study">
+                    <Link to="/study" className="study">
                         <img src={studyIcon} alt="Estudar" />
                         Estudar
-                    </a>
+                    </Link>
 
-                    <a href="" className="give-classes">
+                    <Link to="/give-classes" className="give-classes">
                         <img src={giveClassesIcon} alt="Dar Aulas" />
                         Dar Aulas
-                    </a>
+                    </Link>
                 </div>
 
                 <span className="total-connections">
