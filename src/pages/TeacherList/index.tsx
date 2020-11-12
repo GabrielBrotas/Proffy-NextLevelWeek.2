@@ -1,9 +1,9 @@
 import React from 'react'
-import Input from '../components/Input'
+import Input from '../../components/Input'
 
 // Components
-import PageHeader from '../components/PageHeader'
-import TeacherItem from '../components/TeacherItem'
+import PageHeader from '../../components/PageHeader'
+import TeacherItem from '../../components/TeacherItem'
 
 import './styles.css'
 

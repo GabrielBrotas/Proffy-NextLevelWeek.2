@@ -1,10 +1,11 @@
 import React from 'react'
-import Input from '../components/Input'
+import Input from '../../components/Input'
 
-import PageHeader from '../components/PageHeader'
+import PageHeader from '../../components/PageHeader'
 
 import './styles.css'
 import warningIcon from '../../assets/images/icons/warning.svg'
+import Textarea from '../../components/Textarea'
 
 function TeacherForm() {
     return (
@@ -22,6 +23,7 @@ function TeacherForm() {
                     <Input label="Nome Completo" name="name" />
                     <Input label="Avatar" name="avatar"/>
                     <Input label="Whatsapp" name="whatsapp"/>
+                    <Textarea label="Biografia" name="bio" />
                 </fieldset>
                 
                 <fieldset>
