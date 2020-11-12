@@ -11,6 +11,7 @@ import './styles.css'
 interface PageHeaderProps {
     // Neste caso o title é obrigatorio, se fosse opcional faria assim -> title?: string.
     title: string;
+    description?: string; // descrição opcional
 }
 
 // React.FC = react.functioncomponent = componente escrito em formato de função
@@ -26,9 +27,13 @@ const PageHeader: React.FC<PageHeaderProps> = (props) => {
             </div>
     
             <div className="header-content">
+                
                 <strong>{props.title}</strong>
+                
+                {props.description && <p>{props.description}</p>}
 
                 {props.children}
+                
             </div>
         </header>
     )
