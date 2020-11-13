@@ -1,4 +1,6 @@
 import React, {FormEvent, useState} from 'react'
+import {useHistory} from 'react-router-dom'
+
 import Input from '../../components/Input'
 
 import PageHeader from '../../components/PageHeader'
@@ -7,9 +9,12 @@ import Select from '../../components/Select'
 
 import './styles.css'
 import warningIcon from '../../assets/images/icons/warning.svg'
+import api from '../../services/api'
 
 
 function TeacherForm() {
+
+    const history = useHistory();
 
     const [name, setName] = useState('')
     const [avatar, setAvatar] = useState('')
@@ -19,13 +24,13 @@ function TeacherForm() {
     const [cost, setCost] = useState('')
 
     const [scheduleItems, setScheduleItems] = useState([
-        {week_day: 0, from: "", to:""},
+        {week_day: 0, from: '', to:''},
     ])
 
     function addNewScheduleItems() {
         setScheduleItems([
             ...scheduleItems,
-            { week_day: 3, from: "7:00", to: "8:00"}
+            { week_day: 0, from: "", to: ""}
         ])
     }
 
@@ -33,16 +38,13 @@ function TeacherForm() {
         // percorrer o objeto do array e a posição
         const updatedScheduleItems = scheduleItems.map( (scheduleItem, index) => {
             //  se o index for igual a posição
-            if(index = position) {
-                // vai retornar o objecto e, de forma variavel, vai alterar o campo informado com o valor passado
+            if(index === position) {
                 // ex: (0, 'week_day', '2') -> vai retornar o objeto que a posição é igual ao do index e alterar o campo, neste caso, 'week_day' para o valor '2'
                 return {... scheduleItem, [field]: value}
             }
-
             // caso não seja o mesmo index ele vai retornar o objeto sem alteração
             return scheduleItem
         })
-
         setScheduleItems(updatedScheduleItems)
     }
 
@@ -51,6 +53,22 @@ function TeacherForm() {
         // e.preventDefault vai impedir o comportamento padrao de um form, que é de mandar informações e atualizar pagina
         e.preventDefault()
 
+        api.post('/classes', {
+            name,
+            avatar,
+            whatsapp,
+            bio,
+            subject,
+            cost: Number(cost),
+            schedule: scheduleItems
+        }).then( () => {
+            alert('cadastro realizado com sucesso!')
+
+            // mandar o usuario para a landing page
+            history.push('/')
+        }).catch( err => {
+            alert("something went wrong")
+        })
 
     }
 
@@ -146,7 +164,7 @@ function TeacherForm() {
                         Important! <br />
                         Preencha todos os dados
                     </p>
-                    <button type="button">
+                    <button type="submit">
                         Salvar cadastro
                     </button>
                 </footer>
