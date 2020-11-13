@@ -32,8 +32,8 @@ function TeacherForm() {
                     {/* titulo para o fieldset */}
                     <legend>Sobre a Aula</legend>
                     <Select 
-                        label="subject" 
-                        name="Matéria" 
+                        name="subject" 
+                        label="Matéria" 
                         options={[
                             { value: 'Artes', label: "Artes"},
                             { value: 'Matematica', label: "Matematica"},
@@ -42,7 +42,33 @@ function TeacherForm() {
                             { value: 'Educação Financeira', label: "Educação Financeira"},
                         ]}
                     />
-                    <Input label="cost" name="Custo da sua hora por aula"/>
+                    <Input name="cost" label="Custo da sua hora por aula"/>
+                </fieldset>
+                
+                <fieldset>
+                    {/* titulo para o fieldset */}
+                    <legend>Horários Disponíveis
+                        <button type="button">
+                        + Novo Horário
+                        </button>
+                    </legend>
+                    
+                    <div className="schedule-item">
+                        <Select 
+                            label="Matéria" 
+                            name="subject" 
+                            options={[
+                                { value: 'Artes', label: "Artes"},
+                                { value: 'Matematica', label: "Matematica"},
+                                { value: 'Ações', label: "Ações"},
+                                { value: 'Investimentos', label: "Investimentos"},
+                                { value: 'Educação Financeira', label: "Educação Financeira"},
+                            ]}
+                        />
+                        <Input label="Das " name="from" type="time" />
+                        <Input label="Até " name="to" type="time" />
+                    </div>
+                    
                 </fieldset>
 
                 <footer>

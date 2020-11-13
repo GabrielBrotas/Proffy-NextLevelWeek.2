@@ -3,6 +3,7 @@ import Input from '../../components/Input'
 
 // Components
 import PageHeader from '../../components/PageHeader'
+import Select from '../../components/Select'
 import TeacherItem from '../../components/TeacherItem'
 
 import './styles.css'
@@ -15,14 +16,30 @@ function TeacherList() {
                 {/* Child do componente PageHeader */}
                 <form id="search-teachers">
 
-                    <Input 
-                    label="Materia" 
-                    name="subject" 
+                    <Select
+                        label="Matéira" 
+                        name="subject" 
+                        options={[
+                            { value: 'Artes', label: "Artes"},
+                            { value: 'Matematica', label: "Matematica"},
+                            { value: 'Ações', label: "Ações"},
+                            { value: 'Investimentos', label: "Investimentos"},
+                            { value: 'Educação Financeira', label: "Educação Financeira"},
+                        ]}
                     />
                     
-                    <Input 
-                    label="Dia da Semana" 
-                    name="week_day" 
+                    <Select
+                        label="Dia da Semana" 
+                        name="week_day" 
+                        options={[
+                            { value: '0', label: "Domingo"},
+                            { value: '1', label: "Segunda-Feira"},
+                            { value: '2', label: "Terça-Feira"},
+                            { value: '3', label: "Quarta-Feira"},
+                            { value: '4', label: "Quinta-Feira"},
+                            { value: '5', label: "Sexta-Feira"},
+                            { value: '6', label: "Sábado"},
+                        ]}
                     />
 
                     <Input 

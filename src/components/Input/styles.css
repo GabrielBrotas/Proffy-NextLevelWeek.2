@@ -1,5 +1,7 @@
 .input-block {
     position: relative;
+    display: flex;
+    flex-direction: column
 }
 
 /* - todo .input-block que antes dele tem outro, ou seja, o segundo e o ultimo, menos o primeiro*/
