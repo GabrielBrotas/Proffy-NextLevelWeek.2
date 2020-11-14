@@ -32,7 +32,7 @@ const TeacherItem: React.FC<TeacherItemProps> = ({teacher}) => {
 
                         <div>
                             <strong>{teacher.name}</strong>
-                            <span>{teacher.subject}</span>
+                            <span>{teacher.subject}</span>  
                         </div>
                     </header>
 
@@ -48,6 +48,7 @@ const TeacherItem: React.FC<TeacherItemProps> = ({teacher}) => {
 
                         <a 
                             href={`https://api.whatsapp.com/send?phone=${teacher.whatsapp}`} 
+                            rel="noreferrer"
                             onClick={createNewConnection}
                             target="_blank"
                         >
