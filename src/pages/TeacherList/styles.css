@@ -5,7 +5,28 @@
 
 /* Form - Input Header */
 #search-teachers {
-    margin-top: 3.2rem
+    margin-top: 3.2rem;
+}
+
+#search-teachers button {
+    width: 100%;
+    height: 5.6rem;
+    background: var(--color-secundary);
+    color: var(--color-button-text);
+    border: 0;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    font: 700 1.6rem Archivo;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    margin-top: 2.9rem;
+}
+
+#search-teachers button:hover {
+    background: var(--color-secundary-dark)
 }
 
 #search-teachers label {
@@ -26,8 +47,8 @@
 
     #search-teachers {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 1fr 1fr 1fr */
-        column-gap: 30px; /* distanciamento entre as colunas */
+        grid-template-columns: repeat(4, 1fr); /* 1fr 1fr 1fr */
+        column-gap: 20px; /* distanciamento entre as colunas */
         position: absolute;
         bottom: -28px;
     }
@@ -38,6 +59,9 @@
         margin-top: 0
     }
 
+    #search-teachers .select-block + .input-block {
+        margin-right: 2rem
+    }
     #page-teacher-list main {
         padding: 3.2rem 0;
         max-width: 740px;
