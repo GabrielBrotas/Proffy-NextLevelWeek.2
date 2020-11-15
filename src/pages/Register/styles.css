@@ -1,4 +1,4 @@
-.login-form {
+.register-form {
     height: 100%;    
     width: 100%;
     display: grid;
@@ -9,11 +9,11 @@
         "login" 
 }
 
-.login-form .form-content {
+.register-form .form-content {
     padding: 0 7rem;
 }
 
-.login-form section {
+.register-form section {
     grid-area: login;
     max-width: 550px;
     width: 100%;
@@ -25,28 +25,16 @@
     padding: 1rem 0;
 }
 
-.login-form section h2 {
-    margin: 2rem 0;
+.register-form section h2 {
     font-size: 3rem;
 }
 
-.login-form .form-content .password-input {
-    display: flex;
-    height: 5.6rem;
+.register-form section h2 + p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
 }
 
-.login-form .form-content .password-input .input-block {
-    flex: 1;
-}
-
-.login-form .form-content .password-input img {
-    margin-left: -35px;
-    margin-top: 10px;
-    z-index: 0;
-    padding-right: 2rem;
-}
-
-.login-form section .login-options {
+.register-form section .login-options {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -55,21 +43,21 @@
     
 }
 
-.login-form section .login-options .select-button {
+.register-form section .login-options .select-button {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.login-form section .login-options .select-button input + label {
+.register-form section .login-options .select-button input + label {
     margin-left: .5rem
 }
 
-.login-form section .login-options a {
+.register-form section .login-options a {
     text-decoration: none;
     color: var(--color-text-base);
 }
 
-.login-form section button {
+.register-form section button {
     width: 95%;
     height: 5.6rem;
     background: var(--color-secundary);
@@ -87,26 +75,22 @@
     margin: 5rem 0;
 }
 
-.login-form section .login-options input {
-    cursor: pointer;
-} 
-
-.login-form section footer {
+.register-form section footer {
     display: flex;
     justify-content: space-between;
     font-size: 1.5rem;
 }
 
-.login-form section footer a {
+.register-form section footer a {
     color: var(--color-text-base)
 }
 
-.login-form section footer .gratis-info {
+.register-form section footer .gratis-info {
     display: flex;
     justify-content: space-between;
     align-items: center;
 } 
-.login-form section footer .gratis-info p + img {
+.register-form section footer .gratis-info p + img {
     margin-left: 1rem;
 }
 
@@ -116,18 +100,18 @@
 
 @media (min-width: 1000px) {
  
-    #page-login {
+    #page-register {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr;
         grid-template-areas: 
             "hero form"       
     }
 
-    .login-form aside {
+    .register-form aside {
         grid-area: hero;
     }
 
-    .login-form section {
+    .register-form section {
         grid-area: form;   
     }
 

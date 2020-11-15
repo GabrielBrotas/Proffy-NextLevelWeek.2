@@ -4,23 +4,26 @@ import './styles.css'
 
 import Input from '../../components/Input'
 
-import logo from '../../assets/images/logo.svg'
 import heartIcon from '../../assets/images/icons/purple-heart.svg'
+import Aside from '../../components/Aside'
 
 function Login() {
     return (
         <div id="page-login" className="login-form">
-            <aside>
-                <img src={logo} alt="logo"/>
-                <h2>Sua plataforma de estudos online</h2>
-            </aside>
+            
+            <Aside />
             
             <section>
                 <div className="form-content">
                     <h2>Fazer login</h2>
 
                     <Input label="" name="email" placeholder="Email" />
-                    <Input label="" name="password" placeholder="Senha"/>
+
+                    <div className="password-input">
+                        <Input label="" name="password" placeholder="Senha"/>
+                        <img src={heartIcon} alt="show password" />
+                    </div>
+                    
 
                     <div className="login-options">
                         <div className="select-button">
