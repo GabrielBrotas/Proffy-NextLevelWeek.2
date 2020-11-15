@@ -28,12 +28,12 @@
 /* :focus-within vai verificar se dentro do input-block tem um input com foco ativo, se sim, vai estilizar a classe input-lock e nao o input em si */
 /* ::after vai adicionar um elemento no final da classe */
 .input-block:focus-within::after {
-    width: calc(100% - 3.2rem);
+    width: 90%;
     height: 2px;
     content: "";
     background: var(--color-primary-light);
-    position: absolute;
-    left: 1px;
-    right: 1px;
+    left: auto;
+    right: auto;
     bottom: 0;
+    margin: 0 auto;
 }

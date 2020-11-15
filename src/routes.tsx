@@ -8,14 +8,16 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import Landing from './pages/Landing'
 import TeacherForm from './pages/TeacherForm'
 import TeacherList from './pages/TeacherList'
+import Login from './pages/Login'
 
 function Routes() {
     return (
         <BrowserRouter>
             {/* exact faz um verificação de igualdade, caso nao tenha, todas as paginas que tiverem '/' vai renderizar a landing*/}
             <Route path="/" exact component={Landing}/>
-            <Route path="/study" component={TeacherList} />
+            <Route path="/study" component={TeacherList} /> 
             <Route path="/give-classes" component={TeacherForm} />
+            <Route path="/login" component={Login} />
         </BrowserRouter>
     )
 }
