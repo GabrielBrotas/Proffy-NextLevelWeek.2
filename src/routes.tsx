@@ -11,6 +11,7 @@ import TeacherList from './pages/TeacherList'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import ConfirmRegister from './pages/ConfirmRegister'
+import ResetPassword from './pages/ResetPassword'
 
 function Routes() {
     return (
@@ -22,6 +23,7 @@ function Routes() {
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/confirm" component={ConfirmRegister} />
+            <Route path="/reset-password" component={ResetPassword} />
         </BrowserRouter>
     )
 }

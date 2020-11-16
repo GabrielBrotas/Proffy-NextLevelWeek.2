@@ -6,7 +6,7 @@
     grid-template-columns: 1fr;
     grid-template-areas:
         "logo"
-        "login" 
+        "form" 
 }
 
 .login-form .form-content {
@@ -14,7 +14,7 @@
 }
 
 .login-form section {
-    grid-area: login;
+    grid-area: form;
     max-width: 550px;
     width: 100%;
     display: flex;

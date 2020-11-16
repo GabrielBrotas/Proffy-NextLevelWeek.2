@@ -6,7 +6,7 @@
     grid-template-columns: 1fr;
     grid-template-areas:
         "logo"
-        "login" 
+        "form" 
 }
 
 .register-form .form-content {
@@ -14,7 +14,7 @@
 }
 
 .register-form section {
-    grid-area: login;
+    grid-area: form;
     max-width: 550px;
     width: 100%;
     display: flex;
@@ -86,7 +86,7 @@
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr;
         grid-template-areas: 
-            "hero form"       
+            "form hero"       
     }
 
     .register-form aside {
