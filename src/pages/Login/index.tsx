@@ -6,6 +6,7 @@ import Input from '../../components/Input'
 
 import heartIcon from '../../assets/images/icons/purple-heart.svg'
 import Aside from '../../components/Aside'
+import Button from '../../components/Button'
 
 function Login() {
     return (
@@ -38,9 +39,7 @@ function Login() {
                         </Link>
                     </div>
 
-                    <button>
-                        Enviar
-                    </button>
+                    <Button text="Log In" />
 
                     <footer className="login-footer-section">
                         <div className="register-page">

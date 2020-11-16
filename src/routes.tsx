@@ -10,6 +10,7 @@ import TeacherForm from './pages/TeacherForm'
 import TeacherList from './pages/TeacherList'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import ConfirmRegister from './pages/ConfirmRegister'
 
 function Routes() {
     return (
@@ -20,6 +21,7 @@ function Routes() {
             <Route path="/give-classes" component={TeacherForm} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
+            <Route path="/confirm" component={ConfirmRegister} />
         </BrowserRouter>
     )
 }
