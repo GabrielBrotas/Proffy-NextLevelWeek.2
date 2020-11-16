@@ -4,9 +4,14 @@ import {useHistory} from 'react-router-dom'
 import './styles.css'
 
 import checkIcon from '../../assets/images/icons/success-check-icon.svg'
-import Button from '../../components/Button'
+import Button from '../Button'
 
-function ConfirmRegister() {
+interface ConfirmContentProps {
+    title: string;
+    subTitle: string;
+}
+
+const ConfirmContent: React.FC<ConfirmContentProps> = ({title, subTitle}) => {
 
     const history = useHistory()
 
@@ -15,15 +20,15 @@ function ConfirmRegister() {
     }
 
     return (
-        <div className="confirm-register-content">
+        <div className="content">
             <img src={checkIcon} alt="checked" />
 
-            <h2>Cadastro Concluído</h2>
-            <p>Bem vindo a nossa comunidade. Agora você pode assistir a aula de nossos Proffys e até se tornar um! </p>
+            <h2>{title}</h2>
+            <p>{subTitle}</p>
 
             <Button text="Login" onClick={pushToLoginPage}/>
         </div>
     )
 }
 
-export default ConfirmRegister
+export default ConfirmContent
