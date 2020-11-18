@@ -7,30 +7,60 @@
     justify-content: center;
     align-items: center;
 
-    background: var(--color-primary);
     color: var(--color-text-in-primary);
 }
 
-/* Logo */
-.logo-container img {
-    height: 10rem
+#page-landing-content {
+    width: 100vw;
+    height: 100vh;
 }
 
-.logo-container {
+.page-top-content {
+    background: var(--color-primary);
+    padding: 2rem;
+}
+
+.page-bottom-content {
+    padding: 2rem;
+}
+
+.page-bottom-content h2, .page-bottom-content span{
+    color: var(--color-text-complement)
+}
+
+.page-bottom-content strong {
+    color: var(--color-text-base);
+}
+
+/* header */
+.header-user {
+    display: flex;
+    align-items: center;
+}
+
+.header-user img {
+    width: 50px;
+    height: 50px;
+}
+
+.header-user span {
+    margin-left: 1rem;
+}
+
+.logo-content {
     text-align: center;
-    margin-bottom: 3.2rem;
 }
 
-.logo-container h2 {
-    font-weight: 500;
-    font-size: 2.4rem;
-    line-height: 4.6rem;
-    margin-top: 0.8rem;
+.logo-content img {
+    width: 30rem;
 }
-
 /* Hero Image */
 .hero-image{
     width: 100%;
+}
+
+.welcome-message {
+    text-align: center;
 }
 
 /* Buttons */
@@ -97,62 +127,71 @@
 /* Sessao Desktop */
 /* Como a menor tela é 1360px aproximadamente nós vamos criar o breakpoint em 1100px */
 
-@media (min-width: 1100px) {
-    /* o Id é mais poderoso do que a classe então, vamos sobrescrever o max-width para a versao desktop */
+@media (min-width: 1000px) {
+    
     #page-landing-content {
-        max-width: 1100px;
+        max-width: 1400px;
+    }
 
-        /* usar o grid para transformar em desktop */
+    .page-top-content {
+        padding: 3.5rem 10rem;
         display: grid;
-        /* vai ter 2 linhas, a primeira ocupando 350px da tela e a segunda ocupando o que restar */
-        grid-template-rows: 350px 1fr;
-        /* 3 colunas, a primeira ocupando 50% e as outras 2 ocupando 25% */
-        grid-template-columns: 2fr 1fr 1fr;
-        /* formato da grade */
-        grid-template-areas:
-            "logo hero hero"
-            "buttons buttons total"
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 75px 1fr;
+        grid-template-areas: 
+            "header header"
+            "logo landingImg"
     }
 
-    .logo-container {
-        /* vai ocupar a regiao logo do template-areas */
-        grid-area: logo;
+    .header-user {
+        grid-area: header;
         align-self: center;
-        margin: 0;
-        text-align: left
     }
 
-    .logo-container h2{
-        text-align: initial;
-        font-size: 3.6rem
-    }
-
-    .logo-container img {
-        height: 100%
+    .logo-content {
+        grid-area: logo;
+        text-align: left;
+        align-self: center;
     }
 
     .hero-image {
-        grid-area: hero;
-        justify-self: end;
+        grid-area: landingImg;
+        align-self: center;
     }
 
+    .page-bottom-content {
+        margin: 3rem 0;
+        padding: 0 10rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            "welcome buttons";
+    }
+
+    .welcome-message {
+        grid-area: welcome;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .welcome-message span {
+        max-width: 200px;
+    }
     .buttons-container {
         grid-area: buttons;
-        justify-content: flex-start;
+        padding: 0 3rem;
     }
 
-    .buttons-container a{
-        font-size: 2.4rem
-    }
-
-    .buttons-container a img {
-        margin-right: 2.4rem;
+    .buttons-container a {
+        max-width: 250px;
     }
 
     .total-connections {
-        grid-area: total;
-        justify-self: end;
+        margin: 0;
+        display: block;
+        text-align: right;
     }
-
 
 }

@@ -27,33 +27,54 @@ function Landing() {
     return (
         <div id="page-landing">
             <div id="page-landing-content" className="container">
-                <div className="logo-container">
-                    <img src={logoImg} alt="Proffy" />
-                    <h2>Sua plataforma de estudos online.</h2>
+                <div className="page-top-content">
+                    <header className="header-user">
+                        <img src="https://avatars1.githubusercontent.com/u/63565773?s=460&u=47a9f80c4fc321d44adcc314993d9ebfe8a64497&v=4"/>
+
+                        <span>Gabriel Brotas</span>
+                    </header>
+                    
+                    
+                    <div className="logo-content">
+                        <img src={logoImg} alt="logo" />
+                            <h2>Sua Plataforma de estudos online</h2>
+                    </div>
+
+                    <img 
+                        src={landingImg}
+                        alt="Plataforma de estudos"
+                        className="hero-image"
+                    />
                 </div>
-
-                <img 
-                    src={landingImg}
-                    alt="Plataforma de estudos"
-                    className="hero-image"
-                />
-
-                <div className="buttons-container">
-                    <Link to="/study" className="study">
-                        <img src={studyIcon} alt="Estudar" />
-                        Estudar
-                    </Link>
-
-                    <Link to="/give-classes" className="give-classes">
-                        <img src={giveClassesIcon} alt="Dar Aulas" />
-                        Dar Aulas
-                    </Link>
-                </div>
-
-                <span className="total-connections">
-                    Total de {totalConnections} conexões já realizadas <img src={purpleHeartIcon} alt="Coração Roxo" />
-                </span>
                 
+                <div className="page-bottom-content">
+                    <div className="welcome-message">
+                        <div className="welcome">
+                            <h2>
+                                Seja bem-vindo
+                                <br />
+                                <strong>O que deseja fazer?</strong>
+                            </h2>                        
+                        </div>
+
+                        <span className="total-connections">
+                            Total de {totalConnections} conexões já realizadas 
+                            <img src={purpleHeartIcon} alt="Coração Roxo" />
+                        </span>
+                    </div>
+                    
+                    <div className="buttons-container">
+                        <Link to="/study" className="study">
+                            <img src={studyIcon} alt="Estudar" />
+                            Estudar
+                        </Link>
+
+                        <Link to="/give-classes" className="give-classes">
+                            <img src={giveClassesIcon} alt="Dar Aulas" />
+                            Dar Aulas
+                        </Link>
+                    </div>                    
+                </div>
             </div>
         </div>
     )
