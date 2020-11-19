@@ -29,7 +29,10 @@ function Landing() {
             <div id="page-landing-content" className="container">
                 <div className="page-top-content">
                     <header className="header-user">
-                        <img src="https://avatars1.githubusercontent.com/u/63565773?s=460&u=47a9f80c4fc321d44adcc314993d9ebfe8a64497&v=4"/>
+                        <img 
+                            src="https://avatars1.githubusercontent.com/u/63565773?s=460&u=47a9f80c4fc321d44adcc314993d9ebfe8a64497&v=4"
+                            alt="avatar"
+                        />
 
                         <span>Gabriel Brotas</span>
                     </header>
@@ -45,17 +48,18 @@ function Landing() {
                         alt="Plataforma de estudos"
                         className="hero-image"
                     />
+
                 </div>
                 
                 <div className="page-bottom-content">
                     <div className="welcome-message">
-                        <div className="welcome">
-                            <h2>
-                                Seja bem-vindo
-                                <br />
-                                <strong>O que deseja fazer?</strong>
-                            </h2>                        
-                        </div>
+                        
+                        <h2>
+                            Seja bem-vindo
+                            <br />
+                            <strong>O que deseja fazer?</strong>
+                        </h2>                        
+                        
 
                         <span className="total-connections">
                             Total de {totalConnections} conexões já realizadas 

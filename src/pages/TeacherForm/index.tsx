@@ -87,14 +87,13 @@ function TeacherForm() {
                     <legend>Seus dados</legend>
                     
                     <div className="user-data">
-                        <img src="https://avatars1.githubusercontent.com/u/63565773?s=460&u=47a9f80c4fc321d44adcc314993d9ebfe8a64497&v=4" alt="user photo" width="75px" height="75px"/>
+                        <img src="https://avatars1.githubusercontent.com/u/63565773?s=460&u=47a9f80c4fc321d44adcc314993d9ebfe8a64497&v=4" alt="user avatar" width="75px" height="75px"/>
 
                         <span>Gabriel Brotas</span>
 
                         <Input label="Whatsapp" type="tel" placeholder="( ) _ ____ - ____" name="whatsapp" value={whatsapp} onChange={ e => setWhatsapp(e.target.value)} />
                     </div>
                     
-
                     <Textarea label="Biografia" name="bio" value={bio} onChange={ e => setBio(e.target.value)} />
                 </fieldset>
                 

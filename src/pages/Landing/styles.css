@@ -179,6 +179,11 @@
     .welcome-message span {
         max-width: 200px;
     }
+
+    .welcome-message h2 {
+        text-align: left;
+    }
+
     .buttons-container {
         grid-area: buttons;
         padding: 0 3rem;
