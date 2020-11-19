@@ -48,13 +48,41 @@
 
 #page-teacher-form main fieldset legend button:hover {
     color: var(--color-primary-dark);
-
-
 }
 
 #page-teacher-form main fieldset .input-block + .textarea-block,
 #page-teacher-form main fieldset .select-block + .input-block    {
     margin-top: 2.4rem
+}
+
+#page-teacher-form main fieldset .user-data,
+#page-teacher-form main fieldset .about-class {
+    display: flex;
+    align-items: center;
+    width: 93%;
+}
+
+#page-teacher-form main fieldset .user-data span{
+    margin-left: 1rem;
+}
+
+#page-teacher-form main fieldset .user-data .input-block{
+    margin-left: auto;
+}
+
+#page-teacher-form main fieldset .about-class {
+    justify-content: space-between;
+}
+
+#page-teacher-form main fieldset .about-class .input-block {
+    margin: 0
+}
+
+#page-teacher-form main fieldset .about-class .input-money span {
+    position: absolute;
+    margin-top: 4.5rem;
+    z-index: 1;
+    margin-left: 1rem;
 }
 
 #page-teacher-form main label {
@@ -114,16 +142,16 @@
     #page-teacher-form main .schedule-item {
         display: grid;
         grid-template-columns: 2fr 1fr 1fr;
-        column-gap: 1.6rem
+        column-gap: 1rem
     }
 
     #page-teacher-form main .schedule-item .input-block {
         margin-top: 0 !important;
-        margin-right: 2rem  
+        margin-right: 5rem  
     }
 
-    #page-teacher-form main .schedule-item .select-block + .input-block {
-        
+    #page-teacher-form main .schedule-item select {
+        width: 90%
     }
 
     #page-teacher-form main footer {

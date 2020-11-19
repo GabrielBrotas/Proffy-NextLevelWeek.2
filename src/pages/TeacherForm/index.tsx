@@ -85,11 +85,15 @@ function TeacherForm() {
                 <fieldset>
                     {/* titulo para o fieldset */}
                     <legend>Seus dados</legend>
-                    <Input label="Nome Completo" name="name" value={name} onChange={ e => setName(e.target.value)} />
+                    
+                    <div className="user-data">
+                        <img src="https://avatars1.githubusercontent.com/u/63565773?s=460&u=47a9f80c4fc321d44adcc314993d9ebfe8a64497&v=4" alt="user photo" width="75px" height="75px"/>
 
-                    <Input label="Avatar" name="avatar" value={avatar} onChange={ e => setAvatar(e.target.value)} />
+                        <span>Gabriel Brotas</span>
 
-                    <Input label="Whatsapp" name="whatsapp" value={whatsapp} onChange={ e => setWhatsapp(e.target.value)} />
+                        <Input label="Whatsapp" type="tel" placeholder="( ) _ ____ - ____" name="whatsapp" value={whatsapp} onChange={ e => setWhatsapp(e.target.value)} />
+                    </div>
+                    
 
                     <Textarea label="Biografia" name="bio" value={bio} onChange={ e => setBio(e.target.value)} />
                 </fieldset>
@@ -97,20 +101,29 @@ function TeacherForm() {
                 <fieldset>
                     {/* titulo para o fieldset */}
                     <legend>Sobre a Aula</legend>
-                    <Select 
-                        name="subject" 
-                        label="Matéria" 
-                        value={subject}
-                        onChange={ e => setSubject(e.target.value)} 
-                        options={[
-                            { value: 'Artes', label: "Artes"},
-                            { value: 'Matematica', label: "Matematica"},
-                            { value: 'Ações', label: "Ações"},
-                            { value: 'Investimentos', label: "Investimentos"},
-                            { value: 'Educação Financeira', label: "Educação Financeira"},
-                        ]}
-                    />
-                    <Input name="cost" label="Custo da sua hora por aula" value={cost} onChange={ e => setCost(e.target.value)} />
+                    <div className="about-class">
+                        <Select 
+                            name="subject" 
+                            label="Matéria" 
+                            value={subject}
+                            onChange={ e => setSubject(e.target.value)} 
+                            options={[
+                                { value: 'Artes', label: "Artes"},
+                                { value: 'Matematica', label: "Matematica"},
+                                { value: 'Ações', label: "Ações"},
+                                { value: 'Investimentos', label: "Investimentos"},
+                                { value: 'Educação Financeira', label: "Educação Financeira"},
+                            ]}
+                        />
+
+                        <div className="input-money">
+                            <span className="input-group-addon">
+                                R$
+                            </span>
+                            <Input name="cost" label="Custo da sua hora por aula" value={cost} onChange={ e => setCost(e.target.value)} />
+                        </div>
+                        
+                    </div>
                 </fieldset>
                 
                 <fieldset>
