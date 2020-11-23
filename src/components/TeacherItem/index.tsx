@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Time from '../Time'
+
 import whatsappIcon from '../../assets/images/icons/whatsapp.svg'
 import api from '../../services/api'
 
@@ -13,6 +15,13 @@ export interface Teacher {
     cost: number;
     bio: string;
     subject: string;
+    classSchedule: Array<Schedule>
+}
+
+interface Schedule {
+    week_day: number;
+    from: number;
+    to: number;
 }
 
 interface TeacherItemProps {
@@ -24,7 +33,7 @@ const TeacherItem: React.FC<TeacherItemProps> = ({teacher}) => {
     function createNewConnection() {
         api.post('/connections', {user_id: teacher.id})
     }
-  
+
     return (
         <article className="teacher-item">
                     <header>
@@ -39,6 +48,14 @@ const TeacherItem: React.FC<TeacherItemProps> = ({teacher}) => {
                     <p>
                         {teacher.bio}
                     </p>
+
+                    <div className="class-schedule-time-content">
+                        {teacher.classSchedule.map( (schedule, index) => {
+                            return (
+                                <Time key={index} week_day={schedule.week_day} from={schedule.from} to={schedule.to} />
+                            )
+                        })}
+                    </div>
 
                     <footer>
                         <p>

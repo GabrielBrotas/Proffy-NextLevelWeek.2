@@ -40,6 +40,12 @@
     line-height: 2.8rem;
 }
 
+.class-schedule-time-content {
+    margin-top: 2rem;;
+    display: flex;
+    justify-content: center;
+}
+
 .teacher-item footer {
     padding: 3.2rem 2rem;
     background: var(--color-box-footer);

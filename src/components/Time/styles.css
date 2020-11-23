@@ -1,0 +1,51 @@
+.class-schedule-component {
+    max-width: 100px;
+    width: 100%;
+    padding: 1rem .2rem;
+    text-align: left;
+    border-radius: 0.8rem;
+    border-style: solid;
+    border-width: 0.1px;
+    border-color: #e0e0e0;
+    margin: 0 .4rem;   
+}
+
+.activated-content {
+    background: #e8e8e8;
+}
+
+.desactived-content {
+    background: #f7f7f7c9;
+}
+
+.class-schedule-time-content .class-schedule-component .class-schedule-info {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.class-schedule-time-content .class-schedule-component .class-schedule-info label {
+    font-size: 1rem;
+    color: var(--color-text-base)
+}
+
+.class-schedule-time-content .class-schedule-component .class-schedule-info .desactived-label,
+.class-schedule-time-content .class-schedule-component .class-schedule-info .desactived-span {
+    color: #d1d1d1
+}
+
+.class-schedule-time-content .class-schedule-component .class-schedule-info span {
+    font-size: 1.2rem;
+    color: var(--color-text-title);
+    font-weight: bold;
+}
+
+.class-schedule-time-content .class-schedule-component .class-schedule-info + .class-schedule-info {
+    margin-top: 1rem;
+}
+
+@media (min-width: 700px) {
+
+    
+
+}

@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from 'react'
+import React, { FormEvent, useEffect, useState } from 'react'
 
 import api from '../../services/api'
 // Components
@@ -9,6 +9,21 @@ import Input from '../../components/Input'
 
 import './styles.css'
 
+interface ClassSchedule {
+    id: number;
+    subject: string;
+    cost: number;
+    user_id: number;
+    name: string;
+    avatar: string;
+    whatsapp: number;
+    bio: string;
+    week_day: number;
+    from: number;
+    to: number;
+    class_id: number;
+}
+
 function TeacherList() {
 
     const [subject, setSubject] = useState('')
@@ -18,7 +33,6 @@ function TeacherList() {
 
     async function searchTeachers(e: FormEvent) {
         e.preventDefault();
-        
         const response = await api.get('classes', {
             // passar querys via parametros
             params: {
@@ -27,10 +41,14 @@ function TeacherList() {
                 time
             }
         })
-
-        setTeachers(response.data)
-        
     }
+
+    useEffect( () => {
+        api.get('/classes')
+            .then( (res) => {
+                setTeachers(res.data)
+            })
+    }, [])
     
     return (
         <div id="page-teacher-list" className="container">
@@ -60,11 +78,11 @@ function TeacherList() {
                         onChange={ e => setWeekDay(e.target.value)}
                         options={[
                             { value: '0', label: "Domingo"},
-                            { value: '1', label: "Segunda-Feira"},
-                            { value: '2', label: "Terça-Feira"},
-                            { value: '3', label: "Quarta-Feira"},
-                            { value: '4', label: "Quinta-Feira"},
-                            { value: '5', label: "Sexta-Feira"},
+                            { value: '1', label: "Segunda"},
+                            { value: '2', label: "Terça"},
+                            { value: '3', label: "Quarta"},
+                            { value: '4', label: "Quinta"},
+                            { value: '5', label: "Sexta"},
                             { value: '6', label: "Sábado"},
                         ]}
                     />
