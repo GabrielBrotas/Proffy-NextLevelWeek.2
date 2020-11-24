@@ -1,7 +1,8 @@
 .class-schedule-component {
-    max-width: 100px;
-    width: 100%;
-    padding: 1rem .2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5rem .2rem;
     text-align: left;
     border-radius: 0.8rem;
     border-style: solid;
@@ -20,8 +21,10 @@
 
 .class-schedule-time-content .class-schedule-component .class-schedule-info {
     display: flex;
+    min-width: 95px;
     flex-direction: column;
-    
+    align-items: start;
+    padding: 0 2rem;
 }
 
 .class-schedule-time-content .class-schedule-component .class-schedule-info label {
@@ -45,7 +48,16 @@
 }
 
 @media (min-width: 700px) {
+    .class-schedule-time-content .class-schedule-component {
+        flex-direction: column;
+        max-width: 100px;
+        width: 100%; 
+        padding: 0;
+    }
 
-    
+    .class-schedule-time-content .class-schedule-component .class-schedule-info {
+        align-items: center;
+        padding: 0;
+    }
 
 }

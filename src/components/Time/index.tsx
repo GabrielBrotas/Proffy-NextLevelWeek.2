@@ -17,7 +17,7 @@ const Time: React.FC<TimeProps> = ({week_day, from, to}) => {
         hour = time / 60 | 0
         minutes = time % 60 | 0
 
-        if(minutes.toString().length == 1) {
+        if(minutes.toString().length === 1) {
             minutes = "0" + minutes;
         }
 

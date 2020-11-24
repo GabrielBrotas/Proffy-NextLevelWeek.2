@@ -9,21 +9,6 @@ import Input from '../../components/Input'
 
 import './styles.css'
 
-interface ClassSchedule {
-    id: number;
-    subject: string;
-    cost: number;
-    user_id: number;
-    name: string;
-    avatar: string;
-    whatsapp: number;
-    bio: string;
-    week_day: number;
-    from: number;
-    to: number;
-    class_id: number;
-}
-
 function TeacherList() {
 
     const [subject, setSubject] = useState('')
@@ -41,6 +26,8 @@ function TeacherList() {
                 time
             }
         })
+
+        setTeachers(response.data)
     }
 
     useEffect( () => {

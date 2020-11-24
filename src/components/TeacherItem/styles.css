@@ -43,6 +43,7 @@
 .class-schedule-time-content {
     margin-top: 2rem;;
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
@@ -105,4 +106,9 @@
     .teacher-item footer button img {
         margin-right: 1.6rem;
     }
+
+    .class-schedule-time-content {
+        flex-direction: row;
+    }
+
 }
