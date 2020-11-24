@@ -39,7 +39,7 @@ function TeacherList() {
     
     return (
         <div id="page-teacher-list" className="container">
-            <PageHeader title="Estes são os proffys disponívels">
+            <PageHeader title="Estes são os proffys disponívels" tag="Estudar">
 
                 {/* Child do componente PageHeader */}
                 <form id="search-teachers" onSubmit={searchTeachers}>

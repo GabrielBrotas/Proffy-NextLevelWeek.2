@@ -12,6 +12,7 @@ interface PageHeaderProps {
     // Neste caso o title é obrigatorio, se fosse opcional faria assim -> title?: string.
     title: string;
     description?: string; // descrição opcional
+    tag?: string
 }
 
 // React.FC = react.functioncomponent = componente escrito em formato de função
@@ -23,6 +24,7 @@ const PageHeader: React.FC<PageHeaderProps> = (props) => {
                 <Link to="/" >
                     <img src={backIcon} alt="voltar" />
                 </Link>
+                {props.tag && <p>{props.tag}</p>}
                 <img src={logoImg} alt="Proffy" />
             </div>
     
