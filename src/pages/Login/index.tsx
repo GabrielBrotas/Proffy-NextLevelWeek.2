@@ -1,14 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './styles.css'
 
+import { useDispatch } from 'react-redux'
+
 import Input from '../../components/Input'
+import Button from '../../components/Button'
+import Aside from '../../components/Aside'
 
 import heartIcon from '../../assets/images/icons/purple-heart.svg'
-import Aside from '../../components/Aside'
-import Button from '../../components/Button'
+import eyesIcon from '../../assets/images/icons/eyes.svg'
+import closedEyesIcon from '../../assets/images/icons/closed-eyes.svg'
 
 function Login() {
+
+    const dispatch = useDispatch()
+
+    const [showPassword, setShowPassword] = useState(false)
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+    function handleLoginUser() {
+        const userData = {email, password}
+        console.log(userData)
+    }
+
     return (
         <div id="page-login" className="login-form">
             
@@ -18,11 +34,28 @@ function Login() {
                 <div className="form-content">
                     <h2>Fazer login</h2>
 
-                    <Input label="" name="email" placeholder="Email" />
+                    <Input 
+                        label="" 
+                        name="email" 
+                        placeholder="Email"
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
+                    />
 
                     <div className="password-input">
-                        <Input label="" name="password" placeholder="Senha"/>
-                        <img src={heartIcon} alt="show password" />
+                        <Input 
+                            type={showPassword ? "text" : "password"}
+                            label="" 
+                            name="password" 
+                            placeholder="Senha"
+                            value={password}
+                            onChange={e => setPassword(e.target.value)}
+                        />
+                        <img 
+                            src={showPassword ? eyesIcon : closedEyesIcon} 
+                            alt="show password"
+                            onClick={() => setShowPassword(!showPassword)}
+                        />
                     </div>
                     
 
@@ -39,7 +72,7 @@ function Login() {
                         </Link>
                     </div>
 
-                    <Button text="Log In" />
+                    <Button text="Log In" onClick={handleLoginUser} />
 
                     <footer className="login-footer-section">
                         <div className="register-page">
