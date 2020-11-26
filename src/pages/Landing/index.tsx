@@ -14,10 +14,8 @@ import purpleHeartIcon from '../../assets/images/icons/purple-heart.svg'
 import './styles.css'
 import api from '../../services/api'
 import { useSelector } from 'react-redux'
+import { StateProps } from '../../redux/store'
 
-interface StateProps {
-    users: Object
-}
 
 function Landing() {
 

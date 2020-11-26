@@ -3,6 +3,14 @@ import thunk from 'redux-thunk'
 
 import userReducers from './reducers/userReducer'
 
+export interface StateProps {
+    users: {
+        authenticated: boolean,
+        credentials: Object,
+        loading: boolean
+    }
+}
+
 const initialState = {}
 
 const middleware = [thunk]

@@ -12,14 +12,14 @@ import Register from './pages/Register'
 import RegisterConfirmed from './pages/RegisterCheck'
 import ResetPassword from './pages/ResetPassword'
 import ResetPasswordConfirmed from './pages/ResetPasswordCheck'
+import AuthRoute from './utils/AuthRoute'
 
 function Routes() {
     return (
         <BrowserRouter>
-            {/* exact faz um verificação de igualdade, caso nao tenha, todas as paginas que tiverem '/' vai renderizar a landing*/}
-            <Route path="/" exact component={Landing}/>
-            <Route path="/study" component={TeacherList} /> 
-            <Route path="/give-classes" component={TeacherForm} />
+            <AuthRoute path="/" exact component={Landing}/>
+            <AuthRoute path="/study" component={TeacherList} /> 
+            <AuthRoute path="/give-classes" component={TeacherForm} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/register-confirm" component={RegisterConfirmed} />
