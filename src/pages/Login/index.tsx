@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import './styles.css'
 
 import { useDispatch } from 'react-redux'
@@ -11,10 +11,12 @@ import Aside from '../../components/Aside'
 import heartIcon from '../../assets/images/icons/purple-heart.svg'
 import eyesIcon from '../../assets/images/icons/eyes.svg'
 import closedEyesIcon from '../../assets/images/icons/closed-eyes.svg'
+import { loginUser } from '../../redux/actions/userActions'
 
 function Login() {
 
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+    const history = useHistory();
 
     const [showPassword, setShowPassword] = useState(false)
     const [email, setEmail] = useState('')
@@ -22,7 +24,7 @@ function Login() {
 
     function handleLoginUser() {
         const userData = {email, password}
-        console.log(userData)
+        dispatch(loginUser(userData, history))
     }
 
     return (
@@ -33,7 +35,7 @@ function Login() {
             <section>
                 <div className="form-content">
                     <h2>Fazer login</h2>
-
+                    
                     <Input 
                         label="" 
                         name="email" 

@@ -13,11 +13,18 @@ import purpleHeartIcon from '../../assets/images/icons/purple-heart.svg'
 // style
 import './styles.css'
 import api from '../../services/api'
+import { useSelector } from 'react-redux'
+
+interface StateProps {
+    users: Object
+}
 
 function Landing() {
 
-    const [totalConnections, setTotalConnections] = useState(0)
+    const usersState = useSelector((state: StateProps) => state.users)
 
+    const [totalConnections, setTotalConnections] = useState(0)
+    
     useEffect( () => {
         api.get('/connections').then( res => {
             setTotalConnections( res.data.total )
