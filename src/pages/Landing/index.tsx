@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import api from '../../services/api'
+import { useSelector } from 'react-redux'
+import { StateProps } from '../../redux/store'
 
 // O link impede que a pagina seja carregada toda novamente e só renderiza o necessario, diferento da tag html <a href />
 import {Link} from 'react-router-dom'
@@ -9,17 +12,14 @@ import landingImg from '../../assets/images/landing.svg'
 import studyIcon from '../../assets/images/icons/study.svg'
 import giveClassesIcon from '../../assets/images/icons/give-classes.svg'
 import purpleHeartIcon from '../../assets/images/icons/purple-heart.svg'
-
+import defaultUser from '../../assets/images/default-image.png'
 // style
 import './styles.css'
-import api from '../../services/api'
-import { useSelector } from 'react-redux'
-import { StateProps } from '../../redux/store'
-
 
 function Landing() {
 
     const usersState = useSelector((state: StateProps) => state.users)
+    const {credentials} = usersState
 
     const [totalConnections, setTotalConnections] = useState(0)
     
@@ -35,11 +35,11 @@ function Landing() {
                 <div className="page-top-content">
                     <header className="header-user">
                         <img 
-                            src="https://avatars1.githubusercontent.com/u/63565773?s=460&u=47a9f80c4fc321d44adcc314993d9ebfe8a64497&v=4"
+                            src={credentials.avatar ? credentials.avatar : defaultUser }
                             alt="avatar"
                         />
 
-                        <span>Gabriel Brotas</span>
+                        <span>{credentials.name}</span>
                     </header>
                     
                     

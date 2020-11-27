@@ -10,23 +10,19 @@ interface IProps {
     sensitive?: boolean;
     strict?: boolean;
 }
-const AuthRoute = ({component: Component, ...rest}: IProps) => {
+const NotAuthRoute = ({component: Component, ...rest}: IProps) => {
   
-    const {authenticated, loading} = useSelector((state: StateProps) => state.users)
-
+    const {authenticated} = useSelector((state: StateProps) => state.users)
+    
     return (
     <Route 
         {...rest}
 
-        render={(props) => loading === false ? (
-            authenticated === true 
+        render={(props) => authenticated === false 
             ? <Component {...props} />
-            : <Redirect to="/login" />
-        ) : (
-            <Component {...props} />
-        )
+            : <Redirect to="/" />
         }
     />
 )}
 
-export default AuthRoute
+export default NotAuthRoute

@@ -2,7 +2,7 @@ import { SET_AUTHENTICATION } from "../types"
 
 const initialState = {
     authenticated: false,
-    loading: false,
+    loading: true,
     credentials: {},
 }
 
@@ -11,7 +11,7 @@ interface ActionProps {
     payload: any
 }
 
-export default function(state = initialState, action: ActionProps) {
+export default function userReducer(state = initialState, action: ActionProps) {
     switch (action.type) {
 
         case SET_AUTHENTICATION:

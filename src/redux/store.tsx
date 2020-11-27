@@ -6,7 +6,11 @@ import userReducers from './reducers/userReducer'
 export interface StateProps {
     users: {
         authenticated: boolean,
-        credentials: Object,
+        credentials: {
+            name: string, 
+            avatar: string,
+            email: string
+        },
         loading: boolean
     }
 }

@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import api from './services/api';
 
-import {Provider} from 'react-redux';
-import store from './redux/store'
+import {useDispatch} from 'react-redux';
 import {getUserData} from './redux/actions/userActions'
 import Routes from './routes'
 
@@ -11,20 +9,19 @@ import './assets/styles/global.css'
 
 function App() {
 
+  const dispatch = useDispatch();
+
   const [token, setToken] = useState('')
 
   useEffect( () => {
     setToken(localStorage.LSIdToken)
-
     if(token) {
-      getUserData(token)
+      dispatch(getUserData(token.split('Bearer ')[1]))
     }
-  }, [token])
+  }, [token, dispatch])
 
   return (
-    <Provider store={store}>
-      <Routes />
-    </Provider>
+    <Routes />
   );
 }
 

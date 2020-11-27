@@ -13,6 +13,7 @@ import RegisterConfirmed from './pages/RegisterCheck'
 import ResetPassword from './pages/ResetPassword'
 import ResetPasswordConfirmed from './pages/ResetPasswordCheck'
 import AuthRoute from './utils/AuthRoute'
+import NotAuthRoute from './utils/NotAuthRoute'
 
 function Routes() {
     return (
