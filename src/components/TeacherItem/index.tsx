@@ -38,7 +38,7 @@ const TeacherItem: React.FC<TeacherItemProps> = ({teacher}) => {
     return (
         <article className="teacher-item">
                     <header>
-                        <img src={defaultUserImage} alt={teacher.name} />
+                        <img src="https://www.sunoresearch.com.br/wp-content/uploads/2018/02/8-Lic%CC%A7o%CC%83es-para-o-Investidor-da-Carta-de-Warren-Buffett.jpg" alt={teacher.name} />
 
                         <div>
                             <strong>{teacher.name}</strong>

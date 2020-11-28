@@ -84,7 +84,7 @@ function TeacherForm() {
                     <legend>Seus dados</legend>
                     
                     <div className="user-data">
-                        <img src={defaultUserImage} alt="user avatar" width="75px" height="75px"/>
+                        <img src={credentials.avatar ? credentials.avatar : defaultUserImage} alt="user avatar" width="75px" height="75px"/>
 
                         <span>{credentials.name}</span>
 
