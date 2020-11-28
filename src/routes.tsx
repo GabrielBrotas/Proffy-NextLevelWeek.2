@@ -21,8 +21,8 @@ function Routes() {
             <AuthRoute path="/" exact component={Landing}/>
             <AuthRoute path="/study" component={TeacherList} /> 
             <AuthRoute path="/give-classes" component={TeacherForm} />
-            <Route path="/login" component={Login} />
-            <Route path="/register" component={Register} />
+            <NotAuthRoute path="/login" component={Login} />
+            <NotAuthRoute path="/register" component={Register} />
             <Route path="/register-confirm" component={RegisterConfirmed} />
             <Route path="/reset-password" component={ResetPassword} />
             <Route path="/reset-password-confirm" component={ResetPasswordConfirmed} />

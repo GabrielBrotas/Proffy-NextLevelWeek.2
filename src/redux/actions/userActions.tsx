@@ -3,7 +3,7 @@ import { Dispatch } from "redux"
 import api from "../../services/api"
 import { CLEAR_ERRORS, SET_ERRORS, SET_AUTHENTICATION } from "../types"
 
-interface HistoryProps {
+export interface HistoryProps {
     push: Function
 }
 

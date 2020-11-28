@@ -12,7 +12,7 @@ import landingImg from '../../assets/images/landing.svg'
 import studyIcon from '../../assets/images/icons/study.svg'
 import giveClassesIcon from '../../assets/images/icons/give-classes.svg'
 import purpleHeartIcon from '../../assets/images/icons/purple-heart.svg'
-import defaultUser from '../../assets/images/default-image.png'
+import defaultUserImage from '../../assets/images/default-image.png'
 // style
 import './styles.css'
 
@@ -35,7 +35,7 @@ function Landing() {
                 <div className="page-top-content">
                     <header className="header-user">
                         <img 
-                            src={credentials.avatar ? credentials.avatar : defaultUser }
+                            src={credentials.avatar ? credentials.avatar : defaultUserImage }
                             alt="avatar"
                         />
 

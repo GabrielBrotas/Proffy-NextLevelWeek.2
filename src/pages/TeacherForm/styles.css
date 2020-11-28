@@ -85,6 +85,10 @@
     margin-left: 1rem;
 }
 
+#page-teacher-form main fieldset .about-class .input-money input{
+    padding: 0 0 0 3.2rem;
+}
+
 #page-teacher-form main label {
     color: var(--color-text-complement)
 }

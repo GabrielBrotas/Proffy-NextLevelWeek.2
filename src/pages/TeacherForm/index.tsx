@@ -1,23 +1,27 @@
 import React, {FormEvent, useState} from 'react'
 import {useHistory} from 'react-router-dom'
+import { StateProps } from '../../redux/store'
+import { useDispatch, useSelector } from 'react-redux'
+import { createNewClass } from '../../redux/actions/classesActions'
 
 import Input from '../../components/Input'
-
 import PageHeader from '../../components/PageHeader'
 import Textarea from '../../components/Textarea'
 import Select from '../../components/Select'
 
-import './styles.css'
 import warningIcon from '../../assets/images/icons/warning.svg'
-import api from '../../services/api'
+import defaultUserImage from '../../assets/images/default-image.png'
 
+import './styles.css'
 
 function TeacherForm() {
 
     const history = useHistory();
+    const dispatch = useDispatch();
 
-    const [name, setName] = useState('')
-    const [avatar, setAvatar] = useState('')
+    const usersState = useSelector((state: StateProps) => state.users)
+    const {credentials} = usersState
+    
     const [whatsapp, setWhatsapp] = useState('')
     const [bio, setBio] = useState('')
     const [subject, setSubject] = useState('')
@@ -53,23 +57,15 @@ function TeacherForm() {
         // e.preventDefault vai impedir o comportamento padrao de um form, que é de mandar informações e atualizar pagina
         e.preventDefault()
 
-        api.post('/classes', {
-            name,
-            avatar,
-            whatsapp,
-            bio,
+        const classData = {
+            user_id: credentials.userId,
             subject,
             cost: Number(cost),
+            whatsapp,
+            bio,
             schedule: scheduleItems
-        }).then( () => {
-            alert('cadastro realizado com sucesso!')
-
-            // mandar o usuario para a landing page
-            history.push('/')
-        }).catch( err => {
-            alert("something went wrong")
-        })
-
+        }
+        dispatch(createNewClass(classData, history))
     }
 
     return (
@@ -88,9 +84,9 @@ function TeacherForm() {
                     <legend>Seus dados</legend>
                     
                     <div className="user-data">
-                        <img src="https://avatars1.githubusercontent.com/u/63565773?s=460&u=47a9f80c4fc321d44adcc314993d9ebfe8a64497&v=4" alt="user avatar" width="75px" height="75px"/>
+                        <img src={defaultUserImage} alt="user avatar" width="75px" height="75px"/>
 
-                        <span>Gabriel Brotas</span>
+                        <span>{credentials.name}</span>
 
                         <Input label="Whatsapp" type="tel" placeholder="( ) _ ____ - ____" name="whatsapp" value={whatsapp} onChange={ e => setWhatsapp(e.target.value)} />
                     </div>

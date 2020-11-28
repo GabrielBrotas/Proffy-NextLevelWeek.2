@@ -7,6 +7,7 @@ export interface StateProps {
     users: {
         authenticated: boolean,
         credentials: {
+            userId: number
             name: string, 
             avatar: string,
             email: string
