@@ -1,6 +1,5 @@
-import React, { FormEvent, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
-import api from '../../services/api'
 // Components
 import PageHeader from '../../components/PageHeader'
 import Select from '../../components/Select'
@@ -11,14 +10,13 @@ import './styles.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { StateProps } from '../../redux/store'
 import { getTeacherList } from '../../redux/actions/classesActions'
-import { time } from 'console'
 
 function TeacherList() {
 
     const dispatch = useDispatch();
 
-    const classes = useSelector((state: StateProps) => state.classes)
-    console.log(classes)
+    const {classList} = useSelector((state: StateProps) => state.classes)
+
     const [subject, setSubject] = useState('')
     const [week_day, setWeekDay] = useState('')
     const [time, setTime] = useState('')
@@ -26,8 +24,12 @@ function TeacherList() {
 
     useEffect( () => {
         dispatch(getTeacherList(subject, week_day, time))
-    }, [subject, week_day, time])
-    
+    }, [dispatch, subject, week_day, time])
+
+    useEffect( () => {
+        setTeachers(classList)
+    }, [classList])
+
     return (
         <div id="page-teacher-list" className="container">
             <PageHeader title="Estes são os proffys disponívels" tag="Estudar">

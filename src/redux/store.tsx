@@ -15,9 +15,9 @@ export interface StateProps {
         },
         loading: boolean
     },
-    classes: [{
-        
-    }]
+    classes: {
+        classList: [] 
+    }
 }
 
 const initialState = {}
