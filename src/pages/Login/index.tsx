@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import './styles.css'
 
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import Input from '../../components/Input'
 import Button from '../../components/Button'
@@ -12,11 +12,14 @@ import heartIcon from '../../assets/images/icons/purple-heart.svg'
 import eyesIcon from '../../assets/images/icons/eyes.svg'
 import closedEyesIcon from '../../assets/images/icons/closed-eyes.svg'
 import { loginUser } from '../../redux/actions/userActions'
+import { StateProps } from '../../redux/store'
 
 function Login() {
 
     const dispatch = useDispatch();
     const history = useHistory();
+
+    const {errors} = useSelector((state: StateProps) => state.users)
 
     const [showPassword, setShowPassword] = useState(false)
     const [email, setEmail] = useState('')
@@ -44,6 +47,8 @@ function Login() {
                         onChange={e => setEmail(e.target.value)}
                     />
 
+                    {errors.email && <span>* {errors.email}</span>}
+
                     <div className="password-input">
                         <Input 
                             type={showPassword ? "text" : "password"}
@@ -59,6 +64,7 @@ function Login() {
                             onClick={() => setShowPassword(!showPassword)}
                         />
                     </div>
+                    {errors.password && <span>* {errors.password}</span>}
                     
 
                     <div className="login-options">
@@ -74,6 +80,8 @@ function Login() {
                         </Link>
                     </div>
 
+                    {errors.error && <span>* {errors.error}</span>}
+                    
                     <Button text="Log In" onClick={handleLoginUser} />
 
                     <footer className="login-footer-section">

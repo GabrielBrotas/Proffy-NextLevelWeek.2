@@ -12,11 +12,10 @@ interface DecodedTokenProps {
 }
 
 export const loginUser = (userData: Object, history: HistoryProps) => (dispatch: Function) => {
-
     api.post('/login', userData)
         .then( res => {
-            setAuthorizationHeader(res.data.token)
             dispatch({type: CLEAR_ERRORS})
+            setAuthorizationHeader(res.data.token)            
             dispatch(getUserData(res.data.token))
             history.push('/')
         })
@@ -29,7 +28,6 @@ export const loginUser = (userData: Object, history: HistoryProps) => (dispatch:
 }
 
 export const registerUser = (userData: Object, history: HistoryProps) => (dispatch: Function) => {
-    console.log(userData)
     api.post('/user', userData)
         .then( res => {
             setAuthorizationHeader(res.data.token)
@@ -46,8 +44,7 @@ export const registerUser = (userData: Object, history: HistoryProps) => (dispat
 }
 
 export const logoutUser = () => (dispatch: Function) => {
-    // remover o local Storage com os dados do user
-    localStorage.removeItem('FBIdToken');
+    localStorage.removeItem('LSIdToken');
     dispatch({type: SET_UNAUTHENTICATED});
     
 }

@@ -13,7 +13,13 @@ export interface StateProps {
             avatar: string,
             email: string
         },
-        loading: boolean
+        loading: boolean,
+        errors:{
+            name?: string,
+            email?: string,
+            error?: string,
+            password?: string
+        }
     },
     classes: {
         classList: [] 
