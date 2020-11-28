@@ -37,7 +37,15 @@
 #page-teacher-list main {
     margin: 3.2rem auto;
     width: 90%;
+    height: 100%;
+    text-align: left;
 }
+
+#page-teacher-list main .no-proffys {
+    margin-top: 10rem;
+    align-self: center;
+}
+
 
 /* Desktop */
 

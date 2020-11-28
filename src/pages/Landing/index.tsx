@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import api from '../../services/api'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { StateProps } from '../../redux/store'
 
 // O link impede que a pagina seja carregada toda novamente e só renderiza o necessario, diferento da tag html <a href />
@@ -13,10 +13,15 @@ import studyIcon from '../../assets/images/icons/study.svg'
 import giveClassesIcon from '../../assets/images/icons/give-classes.svg'
 import purpleHeartIcon from '../../assets/images/icons/purple-heart.svg'
 import defaultUserImage from '../../assets/images/default-image.png'
+import logoutIcon from '../../assets/images/icons/seta-direita.svg'
+
 // style
 import './styles.css'
+import { logoutUser } from '../../redux/actions/userActions'
 
 function Landing() {
+
+    const dispatch = useDispatch();
 
     const usersState = useSelector((state: StateProps) => state.users)
     const {credentials} = usersState
@@ -29,6 +34,10 @@ function Landing() {
         })
     }, [])
 
+    function handleLogoutUser() {
+        dispatch(logoutUser())
+    }
+
     return (
         <div id="page-landing">
             <div id="page-landing-content" className="container">
@@ -40,6 +49,8 @@ function Landing() {
                         />
 
                         <span>{credentials.name}</span>
+
+                        <img src={logoutIcon} alt="logout" className="logout-icon" onClick={handleLogoutUser} />
                     </header>
                     
                     

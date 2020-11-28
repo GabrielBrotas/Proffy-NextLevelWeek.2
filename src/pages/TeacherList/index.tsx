@@ -80,11 +80,13 @@ function TeacherList() {
             </PageHeader>
 
             <main>
-
-                {teachers.map( (teacher: Teacher) => (
-                    <TeacherItem key={teacher.id} teacher={teacher} />
-                ))}
-
+                {teachers.length > 0 ? (
+                    teachers.map( (teacher: Teacher) => (
+                        <TeacherItem key={teacher.id} teacher={teacher} />
+                    ))
+                ) : (
+                    <p className="no-proffys">Nenhum proffy disponível</p>
+                )}
             </main>
         </div>
     )

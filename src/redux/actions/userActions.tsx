@@ -1,7 +1,7 @@
 import jwtDecode from "jwt-decode"
 import { Dispatch } from "redux"
 import api from "../../services/api"
-import { CLEAR_ERRORS, SET_ERRORS, SET_AUTHENTICATION } from "../types"
+import { CLEAR_ERRORS, SET_ERRORS, SET_AUTHENTICATION, SET_UNAUTHENTICATED } from "../types"
 
 export interface HistoryProps {
     push: Function
@@ -43,6 +43,13 @@ export const registerUser = (userData: Object, history: HistoryProps) => (dispat
                 payload: err.response.data
             })
         })
+}
+
+export const logoutUser = () => (dispatch: Function) => {
+    // remover o local Storage com os dados do user
+    localStorage.removeItem('FBIdToken');
+    dispatch({type: SET_UNAUTHENTICATED});
+    
 }
 
 export const getUserData = (token: string) => (dispatch: Dispatch) => {

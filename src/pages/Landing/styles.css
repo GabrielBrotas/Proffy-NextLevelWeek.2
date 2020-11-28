@@ -26,6 +26,13 @@
     border-radius: 50%;
 }
 
+#page-landing .container .page-top-content .header-user .logout-icon {
+    width: 30px;
+    height: 30px;
+    margin-left: auto;
+    cursor: pointer;
+}
+
 .page-bottom-content {
     padding: 2rem;
 }
