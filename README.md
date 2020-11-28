@@ -12,3 +12,10 @@ O usuario vai só poder acessar a landing estando autenticado, assim ele vai pod
 <img src="public/git-images/landing 2.JPG" alt="drawing" width="150px" height="250px" />
 </div>
 
+### Login / Register
+Seção onde o usuario vai poder logar, cadastrar e resertar a senha
+<div style={{display: flex}}>
+<img src="public/git-images/cadastro.JPG" alt="drawing" width="300px" style={{margin-right: 15px}}/>
+<img src="public/git-images/login.JPG" alt="drawing" width="150px" />
+</div>
+
