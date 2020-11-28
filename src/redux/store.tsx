@@ -1,5 +1,6 @@
 import {createStore, combineReducers, compose, applyMiddleware} from 'redux'
 import thunk from 'redux-thunk'
+import classesReducer from './reducers/classesReducer'
 
 import userReducers from './reducers/userReducer'
 
@@ -13,7 +14,10 @@ export interface StateProps {
             email: string
         },
         loading: boolean
-    }
+    },
+    classes: [{
+        
+    }]
 }
 
 const initialState = {}
@@ -22,6 +26,7 @@ const middleware = [thunk]
 
 const reducers = combineReducers({
     users: userReducers,
+    classes: classesReducer
 })
 
 const store = createStore(

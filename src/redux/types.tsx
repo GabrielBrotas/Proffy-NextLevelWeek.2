@@ -1,4 +1,6 @@
 export const SET_AUTHENTICATION = 'SET_AUTHENTICATION'
 
+export const GET_CLASSES = 'GET_CLASSES'
+
 export const SET_ERRORS = 'SET_ERRORS'
 export const CLEAR_ERRORS = 'CLEAR_ERRORS'

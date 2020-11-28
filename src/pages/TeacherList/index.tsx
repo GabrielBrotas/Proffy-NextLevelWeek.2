@@ -8,41 +8,32 @@ import TeacherItem, { Teacher } from '../../components/TeacherItem'
 import Input from '../../components/Input'
 
 import './styles.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { StateProps } from '../../redux/store'
+import { getTeacherList } from '../../redux/actions/classesActions'
+import { time } from 'console'
 
 function TeacherList() {
 
+    const dispatch = useDispatch();
+
+    const classes = useSelector((state: StateProps) => state.classes)
+    console.log(classes)
     const [subject, setSubject] = useState('')
     const [week_day, setWeekDay] = useState('')
     const [time, setTime] = useState('')
     const [teachers, setTeachers] = useState([])
 
-    async function searchTeachers(e: FormEvent) {
-        e.preventDefault();
-        const response = await api.get('classes', {
-            // passar querys via parametros
-            params: {
-                subject, 
-                week_day,
-                time
-            }
-        })
-
-        setTeachers(response.data)
-    }
-
     useEffect( () => {
-        api.get('/classes')
-            .then( (res) => {
-                setTeachers(res.data)
-            })
-    }, [])
+        dispatch(getTeacherList(subject, week_day, time))
+    }, [subject, week_day, time])
     
     return (
         <div id="page-teacher-list" className="container">
             <PageHeader title="Estes são os proffys disponívels" tag="Estudar">
 
                 {/* Child do componente PageHeader */}
-                <form id="search-teachers" onSubmit={searchTeachers}>
+                <fieldset id="search-teachers">
 
                     <Select
                         label="Matéira" 
@@ -81,10 +72,8 @@ function TeacherList() {
                     value={time}
                     onChange={e => setTime(e.target.value)}
                     />
-                
-                    <button type="submit">Buscar</button>
-                        
-                </form>
+        
+                </fieldset>
 
             </PageHeader>
 

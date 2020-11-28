@@ -6,6 +6,7 @@
 /* Form - Input Header */
 #search-teachers {
     margin-top: 3.2rem;
+    border: 0;
 }
 
 #search-teachers button {
@@ -47,7 +48,7 @@
 
     #search-teachers {
         display: grid;
-        grid-template-columns: repeat(4, 1fr); /* 1fr 1fr 1fr */
+        grid-template-columns: repeat(3, 1fr); /* 1fr 1fr 1fr */
         column-gap: 20px; /* distanciamento entre as colunas */
         position: absolute;
         bottom: -28px;
