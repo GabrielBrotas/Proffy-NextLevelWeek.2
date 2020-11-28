@@ -5,4 +5,5 @@
     
 ## Images
 
-<img src="public/images/home.JPG" alt="drawing" width="700px"/>
+    Nesta selçao
+<img src="public/git-images/Landing.PNG" alt="drawing" width="700px"/>
