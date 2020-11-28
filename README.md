@@ -30,5 +30,5 @@ Onde o usuario vai se cadastrar para poder se tornar um Proffy
 Listagem dos proffys, o usuario tambem poderá filtrar os proffys pela materia, dia ou hora.
 <div style={{display: flex}}>
 <img src="public/git-images/teacher list.JPG" alt="drawing" width="300px" style={{margin-right: 15px}}/>
-<img src="public/git-images/teacher list 2.JPG" alt="drawing" width="270px" />
+<img src="public/git-images/teacher list 2.JPG" alt="drawing" width="150px" />
 </div>
