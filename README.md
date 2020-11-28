@@ -13,9 +13,22 @@ O usuario vai só poder acessar a landing estando autenticado, assim ele vai pod
 </div>
 
 ### Login / Register
-Seção onde o usuario vai poder logar, cadastrar e resertar a senha
+Secção onde o usuario vai poder logar, cadastrar e resertar a senha
 <div style={{display: flex}}>
 <img src="public/git-images/cadastro.JPG" alt="drawing" width="300px" style={{margin-right: 15px}}/>
 <img src="public/git-images/login.JPG" alt="drawing" width="150px" />
 </div>
 
+### Teacher Form
+Onde o usuario vai se cadastrar para poder se tornar um Proffy
+<div style={{display: flex}}>
+<img src="public/git-images/teacher form.JPG" alt="drawing" width="300px" style={{margin-right: 15px}}/>
+<img src="public/git-images/teacher form 2.JPG" alt="drawing" width="270px" />
+</div>
+
+### Teacher List
+Listagem dos proffys, o usuario tambem poderá filtrar os proffys pela materia, dia ou hora.
+<div style={{display: flex}}>
+<img src="public/git-images/teacher list.JPG" alt="drawing" width="300px" style={{margin-right: 15px}}/>
+<img src="public/git-images/teacher list 2.JPG" alt="drawing" width="270px" />
+</div>
