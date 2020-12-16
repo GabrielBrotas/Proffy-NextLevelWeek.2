@@ -1,7 +1,7 @@
 ## About 
 
 this is the web version 2.0 of the Proffy App using React and TypeScrit, where the user can register on the site and have two options, become a Proffy or take classes by one of our Proffys.
-The goal in this app is to create connections between the professionals and people tha want to learn about some subject.
+The goal in this app is to create connections between the professionals and people that want to learn about some subject.
 
 ## Images
 
