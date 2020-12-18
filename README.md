@@ -1,4 +1,4 @@
-# Proffy Web App
+# Proffy Web App 2.0
 
 ## 🚀 About 
 
