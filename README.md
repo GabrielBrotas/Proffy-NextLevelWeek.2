@@ -7,9 +7,9 @@ The goal in this app is to create connections between the professionals and peop
 
 ## 💻 Technologies
 This project was made using the follow technologies:
-  >React;
-  >TypeScript;
-  >Redux;
+  >React; <br />
+  >TypeScript; <br />
+  >Redux; <br />
 
 
 ## Images Web View and Responsive View
