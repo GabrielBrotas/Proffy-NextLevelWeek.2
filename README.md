@@ -11,7 +11,6 @@ This project was made using the follow technologies:
   >TypeScript; <br />
   >Redux; <br />
 
-
 ## Images Web View and Responsive View
 
 ### Landing
